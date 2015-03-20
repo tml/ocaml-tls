@@ -30,6 +30,9 @@ type config = private {
 val config_of_sexp : Sexplib.Sexp.t -> config
 val sexp_of_config : config -> Sexplib.Sexp.t
 
+(** [default_dh_group] is the default diffie hellman group (currently oakley2) *)
+val default_dh_group : Dh.group
+
 (** opaque type of a client configuration *)
 type client
 
