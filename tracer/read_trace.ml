@@ -268,7 +268,7 @@ let cs_mmap file =
 
 let priv, cert =
   let file = cs_mmap "/home/hannes/tls-certs-mirage/openmirage.pem" in
-  X509.Encoding.Pem.(PK.of_pem_cstruct1 file, Cert.of_pem_cstruct file)
+  X509.Encoding.Pem.(PrivateKey.of_pem_cstruct1 file, Cert.of_pem_cstruct file)
 
 let config_of_sexp cfg =
   let open Config in

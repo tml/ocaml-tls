@@ -233,7 +233,7 @@ module Cfg = struct
     let priv = cs_mmap (name ^ ".key")
     and cert = cs_mmap (name ^ ".pem")
     in
-    X509.Encoding.Pem.(PK.of_pem_cstruct1 priv, Cert.of_pem_cstruct1 cert)
+    X509.Encoding.Pem.(PrivateKey.of_pem_cstruct1 priv, Cert.of_pem_cstruct1 cert)
 
   let ca = X509.Encoding.Pem.Cert.of_pem_cstruct1 (cs_mmap "cacert.pem")
 
